@@ -1,3 +1,4 @@
+.PHONY: migrate rollback
 run:
 	deno run --allow-net --allow-read src/mod.ts
 
