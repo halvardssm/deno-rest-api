@@ -35,4 +35,4 @@ jobs:
           deno-version: ${{env.DENO_VERSION}}
           
       - name: Run migrations
-        run: make migrate
+        run: ls
