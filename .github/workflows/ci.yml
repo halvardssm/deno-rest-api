@@ -33,6 +33,8 @@ jobs:
         uses: denolib/setup-deno@master
         with: 
           deno-version: ${{env.DENO_VERSION}}
+      
+      - uses: actions/checkout@v2
           
       - name: Run migrations
-        run: ls
+        run: make migrate
