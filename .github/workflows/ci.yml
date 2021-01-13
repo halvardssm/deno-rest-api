@@ -1,0 +1,33 @@
+name: CI
+
+env:
+  DENO_VERSION: 1.6.3
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-migrations:
+    name: Run migrations
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: pwd
+          POSTGRES_DB: nessie
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Run tests
+        run: make migrate
