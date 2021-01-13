@@ -29,5 +29,10 @@ jobs:
           - 5432:5432
 
     steps:
-      - name: Run tests
+      - name: Install deno
+        uses: denolib/setup-deno@master
+        with: 
+          deno-version: ${{env.DENO_VERSION}}
+          
+      - name: Run migrations
         run: make migrate
