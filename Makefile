@@ -11,4 +11,4 @@ build:
 	@docker build -t deno_rest .
 
 run_prod:
-	@docker run deno_rest
+	@docker run -it --rm deno_rest 
