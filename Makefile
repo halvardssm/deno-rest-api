@@ -12,3 +12,6 @@ build:
 
 run_prod:
 	@docker run -it --rm deno_rest 
+
+test_env:
+	deno run --allow-env test_env.ts
