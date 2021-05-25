@@ -1,16 +1,8 @@
-import {
-  ClientPostgreSQL,
-  NessieConfig,
-} from "https://deno.land/x/nessie@2.0.0-rc2/mod.ts";
+import { ClientPostgreSQL, NessieConfig } from "./deps.ts";
+import { connectionOptions } from "./db/db.ts";
 
 const config: NessieConfig = {
-  client: new ClientPostgreSQL({
-    database: "nessie",
-    hostname: "localhost",
-    port: 5432,
-    user: "root",
-    password: "pwd",
-  }),
+  client: new ClientPostgreSQL(connectionOptions),
 };
 
 export default config;

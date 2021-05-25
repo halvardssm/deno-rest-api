@@ -1,8 +1,8 @@
-import { Application } from "https://deno.land/x/oak@v7.5.0/mod.ts";
+import { Application } from "./deps.ts";
 const app = new Application();
 
 app.use((ctx) => {
-  ctx.response.body = "Hallo World!";
+  ctx.response.body = "Hello World!";
 });
 
 const port = parseInt(Deno.env.get("APP_PORT") || "8000");

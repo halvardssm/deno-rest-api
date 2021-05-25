@@ -1,5 +1,5 @@
 run:
-	deno run --allow-net --allow-env src/main.ts
+	deno run --allow-net --allow-env main.ts
 
 migrate:
 	deno run -A --unstable https://deno.land/x/nessie@2.0.0-rc2/cli.ts migrate
