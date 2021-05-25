@@ -1,9 +1,8 @@
-.PHONY: migrate rollback
 run:
-	deno run --allow-net --allow-read src/mod.ts
+	deno run --allow-net --allow-env src/main.ts
 
 migrate:
-	deno run --allow-net --allow-read https://deno.land/x/nessie@1.1.3/cli.ts migrate
+	deno run -A --unstable https://deno.land/x/nessie@2.0.0-rc2/cli.ts migrate
 
 rollback:
-	deno run --allow-net --allow-read https://deno.land/x/nessie@1.1.3/cli.ts rollback
+	deno run -A --unstable https://deno.land/x/nessie@2.0.0-rc2/cli.ts rollback
