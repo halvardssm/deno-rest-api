@@ -6,6 +6,10 @@ Template for deno rest api
 
 `make` or `make run` starts the server
 
+`make dev` starts the server in a docker image
+
+`make build` builds the docker image
+
 `make migrate` runs migrations
 
 `make rollback` runs rollback
@@ -13,4 +17,4 @@ Template for deno rest api
 ## Migrations
 
 To create migrations, run:
-`deno run --allow-net --allow-read --allow-write https://deno.land/x/nessie/cli.ts make create_users`
+`deno run -A --unstable https://deno.land/x/nessie/cli.ts make migration_name`

@@ -1,5 +1,12 @@
+ENV=dev
+
+include .env
+
 run:
-	deno run --allow-net --allow-env main.ts
+	deno run -A --unstable --watch main.ts
+
+dev:
+	@docker run -it --rm -v `pwd`:/app -p $(APP_PORT):$(APP_PORT) deno_rest
 
 migrate:
 	deno run -A --unstable https://deno.land/x/nessie@2.0.0-rc2/cli.ts migrate
@@ -10,5 +17,5 @@ rollback:
 build:
 	@docker build -t deno_rest .
 
-run_prod:
+start:
 	@docker run -it --rm deno_rest 

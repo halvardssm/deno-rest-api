@@ -1,17 +1,13 @@
-import { PostgreSQLClientOptions } from "../deps.ts";
+import { SQLiteClientOptions } from "../deps.ts";
 
-const {
-  DB_HOST = "localhost",
-  DB_PORT = "5432",
-  DB_PASSWORD,
-  DB_USER = "postgres",
-  DB_NAME = "postgres",
-} = Deno.env.toObject();
+// In case of PostgreSQL or MySQL
+// const {
+//   DB_HOST = "localhost",
+//   DB_PORT = "5432",
+//   DB_PASSWORD,
+//   DB_USER = "postgres",
+//   DB_NAME = "postgres",
+// } = Deno.env.toObject();
 
-export const connectionOptions: PostgreSQLClientOptions = {
-  database: DB_NAME,
-  hostname: DB_HOST,
-  port: parseInt(DB_PORT),
-  user: DB_USER,
-  password: DB_PASSWORD,
-};
+// Undefined as we will use in memory db by default
+export const connectionOptions: SQLiteClientOptions = undefined;
